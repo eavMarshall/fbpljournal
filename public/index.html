@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <link rel="manifest" href="manifest.json">
+    <link rel="shortcut icon" href="favicon.ico">
+    <style>
+      .fitLoadingImage {
+        max-width: 50%;
+        max-height: 50%;
+      }
+      .centerLoadingImage {
+        display: block;
+        margin: auto;
+        top: 25%;
+        left: 25%;
+      }
+      .loadingImageSpin {
+        position: absolute;
+        -webkit-animation:spin 4s linear infinite;
+        -moz-animation:spin 4s linear infinite;
+        animation:spin 4s linear infinite;
+      }
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    </style>
+    <title>React-redux-firebase</title>
+  </head>
+  <body>
+    <img id="loadingImage" class="fitLoadingImage centerLoadingImage loadingImageSpin" src="logo.svg"></img>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root" style="visibility: hidden;"></div>
+
+    <script>console.log("loading scrips");</script>
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script>
+      var vscript = document.createElement("script");
+      vscript.setAttribute("src", "./js/vendor.js");
+      document.body.appendChild(vscript);
+      vscript.addEventListener('load', function() {
+        bscript = document.createElement("script");
+        bscript.setAttribute("src", "./js/bundle.js");
+        document.body.appendChild(bscript);
+        bscript.addEventListener('load', function() {
+          delete vscript;
+          delete bscript;
+        });
+      });
+    </script>
+  </body>
+</html>
