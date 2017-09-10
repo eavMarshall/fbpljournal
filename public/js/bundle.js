@@ -953,11 +953,12 @@ var _firebase2 = _interopRequireDefault(_firebase);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 firebase.initializeApp({
-  apiKey: "<API_KEY>",
-  authDomain: "<PROJECT_ID>.firebaseapp.com",
-  databaseURL: "https://<DATABASE_NAME>.firebaseio.com",
-  storageBucket: "<BUCKET>.appspot.com",
-  messagingSenderId: "<SENDER_ID>"
+  apiKey: "AIzaSyDWE9guKuXq6M3ND-y7MQgeimUMDzYaa5s",
+  authDomain: "eavmarshall-github.firebaseapp.com",
+  databaseURL: "https://eavmarshall-github.firebaseio.com",
+  projectId: "eavmarshall-github",
+  storageBucket: "",
+  messagingSenderId: "927390139287"
 });
 
 /***/ }),
