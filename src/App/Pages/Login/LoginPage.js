@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import CommonReducer from '../../../Reducer.js';
+import * as Common from '../../../CommonReducer.js';
 import './Login.css';
 import googleIcon from './googleicon.svg';
 
@@ -36,7 +36,7 @@ class Login extends Component {
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-    CommonReducer : CommonReducer
+    CommonReducer : Common.CommonReducer
   }, dispatch);
 }
 

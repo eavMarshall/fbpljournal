@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import CommonReducer from '../../../Reducer.js';
+import * as Common from '../../../CommonReducer.js';
 import HomePage from './Home/HomePage.js';
 import Page1Page from './Page1/Page1Page.js';
 import Page2Page from './Page2/Page2Page.js';
@@ -9,13 +9,13 @@ import Page3Page from './Page3/Page3Page.js';
 
 class MainPage extends Component {
   selectPage(pageid) {
-    this.props.CommonReducer({ type: '@Common.Session.update', payload: {
+    this.props.CommonReducer({ type: Common.redTypes.SessionUpdate, payload: {
       selectedPageID: pageid
     }});
   }
   logoutHandler() {
     this.props.CommonReducer({
-      type: '@Common.Session.actionLogOut', payload: true
+      type: Common.actionTypes.SessionLogout, payload: true
     });
   }
   render() {
@@ -45,7 +45,7 @@ class MainPage extends Component {
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-    CommonReducer : CommonReducer
+    CommonReducer : Common.CommonReducer
   }, dispatch);
 }
 

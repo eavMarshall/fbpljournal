@@ -1,7 +1,8 @@
 # React-Redux-Firebase project starter
+Currently running @ [https://eavmarshall.github.io/React-redux-firebase/]
 This is a start project to quickly get up and running
 
-# Goals
+## Goals
  - MVC design with flux one way data flow
  - React as the view
  - Redux controlling the model (state)
@@ -9,8 +10,10 @@ This is a start project to quickly get up and running
  - Persistent data on Firebase
  - Google auth for signing in
  - User having private and public data
+ - Automation test done via manipulating the model
 
-# Setup
+
+## Setup
 Install NPM
 Install Webpack
 Download the project
@@ -33,12 +36,20 @@ firebase.initializeApp({
   messagingSenderId: "<SENDER_ID>",
 });
 ```
+Add google authentication in the database>authentication tab, and scroll down and add local host
+install the https://www.npmjs.com/package/firebase-tools
+From the CLI run
+```
+firebase serve
+```
+You will have to sign in with your firebase console account, and now you'll be able to test update the client js webpage on localhost to talk to your firebase.
 
+### For development I recommended a watcher
 from root run
 ```
 webpack -w
 ```
-and start changing the code
+Any changes to the files will automatically get reloaded. Don't spend too much time on the UI, get your model completed. Then you can use hot reload to tweek your UI
 
 
 

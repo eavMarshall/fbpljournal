@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import CommonReducer from './Reducer.js';
+import * as Common from './CommonReducer.js';
 
 const Reducers = combineReducers({
-  Common: CommonReducer,
+  Common: Common.CommonReducer,
 })
 
 export default Reducers

@@ -6,7 +6,7 @@ import './index.css';
 import App from './App/App';
 import registerServiceWorker from './registerServiceWorker';
 import combineReducers from './combineReducers.js';
-import middleware from './Middleware.js';
+import middleware from './CommonMiddleware.js';
 import Firebase from "firebase";
 
 console.log("loading firebase");

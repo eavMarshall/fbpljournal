@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import CommonReducer from '../Reducer.js';
+import * as Common from '../CommonReducer.js';
 import './App.css';
 import LoginPage from './Pages/Login/LoginPage.js';
 import MainPage from './Pages/Main/MainPage.js';
@@ -16,7 +16,7 @@ class App extends Component {
 
 function matchDispatchToProps(dispatch) {
   return bindActionCreators({
-    CommonReducer : CommonReducer
+    CommonReducer : Common.CommonReducer
   }, dispatch);
 }
 
