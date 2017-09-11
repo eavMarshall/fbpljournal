@@ -53,6 +53,45 @@ Any changes to the files will automatically get reloaded. Don't spend too much t
 
 
 
+# Current layout
+## Home
+Has public chat
+
+## Page1
+Empty
+## Page2
+Empty
+## Page3
+Empty
+
+
+Current firebase rules
+```
+{
+  "rules": {
+    ".write" : true,
+    ".read": true,
+    "users": {
+      "$user_id": {
+        ".read" : "$user_id === auth.uid",
+        ".write": "$user_id === auth.uid"
+      }
+    },
+    "home": {
+      ".write" : false,
+      ".read": true,
+      "chat": {
+        ".write" : false,
+        ".read": true,
+        "$pushId": {
+          ".read": true,
+          ".write": "!data.exists() && newData.hasChildren(['message', 'displayName'])"
+        }
+      }
+  	}
+  }
+}
+```
 
 Copyright 2017 Elliott Marshall
 
