@@ -8,7 +8,7 @@ import googleIcon from './googleicon.svg';
 class Login extends Component {
   LoginBtnHandler() {
     this.props.CommonReducer({
-      type: '@Common.Session.actionLogin', payload: true
+      type: Common.actionTypes.SessionLogin, payload: true
     });
   }
   render() {
@@ -20,12 +20,15 @@ class Login extends Component {
             <h3>Login page</h3>
           </div>
           <div style={{padding:"16px"}}/>
-          <div id="gSignInWrapper" onClick={() => { this.LoginBtnHandler(); }}>
-            <div id="customBtn" className="customGPlusSignIn">
-              <img className="icon" src={googleIcon}/>
-              <span className="buttonText">Sign in with Google</span>
+          {
+            this.props.isLoggedIn ? null :
+            <div id="gSignInWrapper" onClick={() => { this.LoginBtnHandler(); }}>
+              <div id="customBtn" className="customGPlusSignIn">
+                <img className="icon" src={googleIcon}/>
+                <span className="buttonText">Sign in with Google</span>
+              </div>
             </div>
-          </div>
+          }
           <div style={{padding:"16px"}}/>
           {this.props.hasFailed ? <h4 className="error">{this.props.failMessage}</h4> : null }
         </div>
