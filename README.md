@@ -53,19 +53,20 @@ Any changes to the files will automatically get reloaded. Don't spend too much t
 
 
 
-# Current layout
-## Home
+## Current layout
+### Home
 Has public chat
 
-## Page1
+### Page1
 Empty
-## Page2
+### Page2
 Empty
-## Page3
+### Page3
 Empty
 
 
-Current firebase rules
+## Current firebase rules
+
 ```
 {
   "rules": {
